@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configurações do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="ima/relogio.png">
+    <title>Olha Hora</title>
+</head>
+
+<body onload="startTime()">
+    <!-- Barra de navegação -->
+    <nav class="nav">
+        <li><a href="https://www.youtube.com/watch?v=xZVInA4NiGs&ab_channel=Pedrone337" target="_blank"><i class="fab fa-youtube"></i> Youtube</a></li>
+        <li><a href="https://api.whatsapp.com/send/?phone=5515997350503&text&type=phone_number&app_absent=0" target="_blank" onclick="playWhatsAppSound()"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="https://discord.gg/7B2gQJ59" target="_blank" onclick="playDiscordSound()"><i class="fab fa-discord"></i> Discord</a></li>
+    </nav>
+
+    <!-- Relógio e tela principal -->
+    <div class="tela">
+        <div class="relogio">
+            <div id="txt"></div>
+        </div>
+    </div>
+
+    <!-- Exibição da data -->
+    <div class="data" id="data"></div>
+
+    <!-- Sons para notificações -->
+    <audio id="whatsAppClickSound" controls style="display: none">
+        <source src="sond/whatsapp-whistle.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="discordClickSound" controls style="display: none">
+        <source src="sond/discord-notification.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Script JavaScript para funcionalidades -->
+    <script type="text/javascript">
+        // Função para iniciar o relógio
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            t = setTimeout('startTime()', 500);
+        }
+
+        // Função para formatar o tempo (adiciona zero à esquerda, se necessário)
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        // Função para atualizar a exibição da data a cada segundo
+        function atualizaData() {
+            const dataAtual = new Date();
+            const dia = dataAtual.getDate();
+            const mes = ("0" + (dataAtual.getMonth() + 1)).slice(-2); // Adiciona zero à esquerda e pega as últimas duas casas
+            const ano = dataAtual.getFullYear();
+
+            document.getElementById("data").innerHTML = `${dia}/${mes}/${ano}`;
+        }
+
+        // Atualiza a data a cada segundo
+        setInterval(atualizaData, 1000);
+
+        // Função para reproduzir som do WhatsApp
+        function playWhatsAppSound() {
+            var audio = document.getElementById('whatsAppClickSound');
+            audio.play();
+        }
+
+        // Função para reproduzir som do Discord
+        function playDiscordSound() {
+            var audio = document.getElementById('discordClickSound');
+            audio.play();
+        }
+    </script>    
+</body>
+
+</html>
