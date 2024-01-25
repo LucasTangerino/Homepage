@@ -19,6 +19,7 @@ function checkTime(time) {
     return time;
 }
 
+
 function atualizaData() {
     const dataAtual = new Date();
     const dia = dataAtual.getDate();
@@ -42,7 +43,6 @@ function playDiscordSound() {
 
 const apiKey ="aabf385f061bdd5d53d344356fae7b2e";
 
-// https://flagsapi.com/
 
 const getFlag = (pais) => {
     return "https://flagsapi.com/" + pais + "/flat/64.png";
@@ -71,7 +71,7 @@ const getWeatherData = async(city) => {
     return data;
 }
 const showWeatherData = async (city) => {
-    const data = await getWeatherData(city); // espera aqui
+    const data = await getWeatherData(city);
 
     console.log(typeof(data.main.temp))
 
@@ -93,3 +93,17 @@ searchBtn.addEventListener("click", (e) =>{
 
     showWeatherData(city);
 })
+
+var images = ["imagens/images.jpg","imagens/images2.jpg","imagens/images3.jpg"];
+var currentIndex = 0;
+
+function changeBackground() {
+    document.body.style.backgroundImage = "url('" + images[currentIndex] + "')";
+    currentIndex = (currentIndex + 1) % images.length;
+    setTimeout(changeBackground, 5000); 
+}
+
+window.addEventListener('load', function() {
+    startTime();
+    changeBackground();
+});
