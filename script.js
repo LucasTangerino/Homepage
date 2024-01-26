@@ -107,3 +107,9 @@ window.addEventListener('load', function() {
     startTime();
     changeBackground();
 });
+function toggleDarkMode() {
+    const body = document.querySelector('body');
+    var btn = document.querySelector(".dark-mode-btn");
+    body.classList.toggle('dark-mode');
+    btn.classList.toggle("dark-mode");
+  }

@@ -18,7 +18,7 @@
 }
 .relogio{
     font-size: 6vw;
-    color: white;
+    color: black;
     justify-content: center;
 
 }
@@ -46,12 +46,13 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    color: white;
+    color: black;
 }
 body {
     background-size: cover; 
     background-repeat: no-repeat; 
     width: 100vw;
+    transition: background-image 0.5s ease-in-out;
 }
 .hide{
     display: none;
@@ -66,7 +67,7 @@ body {
 
 .container {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: #fdfdfd;
+    color: black;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     padding: 10px;
@@ -85,6 +86,8 @@ body {
     border: none;
     flex: 1;
     border-radius: 4vw;
+    background-color: black;
+    color: #fff;
 }
 
 .form button {
@@ -92,7 +95,7 @@ body {
     min-width: 50px;
     margin-left: 8px;
     background-color: #8dd0f5;
-    color: #fff;
+    color: black;
     border-radius: 1vw;
     border: none;
     cursor: pointer;  
@@ -104,7 +107,7 @@ body {
 }
 
 #weather-data {
-    border-top: 1px solid #fff;
+    border-top: 1px solid black;
     margin-top: 1.5vw;
     padding-top: 1.5vw;
     text-align: center;
@@ -148,6 +151,89 @@ body {
     vertical-align: middle;
     margin-left: 0.3rem; 
 }
+.dark-mode-btn {
+    position: absolute;
+    top: 5vw;
+    left: 65vw;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  body.dark-mode {
+    background-color: #222;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  body.dark-mode .relogio {
+    color: #fff;
+    border-radius: 10px;
+    transition: color 0.3s;
+  }
+  
+  body.dark-mode .data {
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  body.dark-mode .container {
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  body.dark-mode #weather-data {
+    border-top: 1px solid #fff;
+  }
+  
+  body.dark-mode .form button {
+    color: #fff;
+    transition: color 0.3s;
+    transform: scale(1);
+  }
+  
+  body.dark-mode .form button:hover {
+    transform: scale(1.1);
+  }
+  
+  body.dark-mode .form input {
+    background-color: #fff;
+    color: black;
+  }
+  
+  .dark-mode-btn i.fa-moon {
+    visibility: visible;
+    filter: brightness(1);
+  }
+  
+  .dark-mode-btn i.fa-sun {
+    visibility: hidden;
+  }
+  
+  .dark-mode-btn.dark-mode i.fa-moon {
+    visibility: hidden;
+  }
+  
+  .dark-mode-btn.dark-mode i.fa-sun {
+    visibility: visible;
+    filter: brightness(1.5);
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
 /* cell */
 
 @media (max-width: 1400px) {
