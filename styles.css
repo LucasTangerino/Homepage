@@ -83,11 +83,12 @@ body {
 
 .form input {
     padding: 0.8vw;
-    border: none;
+    border: 1px solid black;
     flex: 1;
     border-radius: 4vw;
-    background-color: black;
+    background-color: transparent;
     color: #fff;
+
 }
 
 .form button {
@@ -199,8 +200,9 @@ body {
   }
   
   body.dark-mode .form input {
-    background-color: #fff;
+    background-color: transparent;
     color: black;
+    border: 1px solid white;
   }
   
   .dark-mode-btn i.fa-moon {
