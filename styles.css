@@ -20,6 +20,7 @@
     font-size: 6vw;
     color: black;
     justify-content: center;
+    transition: ease-in-out;
 
 }
 .nav {
