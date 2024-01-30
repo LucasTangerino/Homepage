@@ -8,7 +8,6 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    margin-top: -10vh;
 }
 .tela{
     display: flex;
@@ -39,7 +38,7 @@
 .nav a{
     text-decoration: none; 
     color: #fff; 
-    margin: 0 10px; 
+    margin: 0; 
 }
 .data{
     font-size: 2vw;
@@ -67,7 +66,7 @@ body {
 }
 
 .container {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
     color: black;
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -266,9 +265,10 @@ body {
 }
 
 .relogio {
-    font-size: 12vw;
-    color: white;
+    font-size: 17vw;
+    color: black;
     justify-content: center;
+    display: flex;
 }
 
 .nav {
@@ -290,12 +290,12 @@ body {
 }
 
 .data {
-    font-size: 6vw;
+    font-size: 10vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    color: white;
+    color: black;
 }
 body {
     background: url(imagens/images.jpg) fixed no-repeat;
@@ -304,5 +304,54 @@ body {
     -moz-background-size: cover;
     background-size: cover;
 }
+.container2{
+    margin-top: 1vw;
+
+}
+
+.form {
+    white-space: nowrap;
+}
+
+.form input {
+    padding: 3vw;
+    border: 1px solid black;
+    border-radius: 4vw;
+    background-color: transparent;
+    color: #fff;
+    flex: 1 0 140px;
+    display: inline-block;
+}
+
+.form button {
+    padding: 3vw;
+    min-width: 50px;
+    margin-left: 10px;
+    background-color: #8dd0f5;
+    color: black;
+    border-radius: 4vw;
+    border: none;
+    cursor: pointer;  
+    display: inline-block;
+}
+.dark-mode-btn {
+    position: absolute;
+    top: 5vw;
+    left: 65vw;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .container {
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    color: black;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+}
+
 
 }
